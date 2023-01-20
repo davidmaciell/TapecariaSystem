@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapecariaSystem", "TapecariaSystem.csproj", "{240721E4-FFFC-488D-B06D-14D36EF2B51A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{240721E4-FFFC-488D-B06D-14D36EF2B51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240721E4-FFFC-488D-B06D-14D36EF2B51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240721E4-FFFC-488D-B06D-14D36EF2B51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240721E4-FFFC-488D-B06D-14D36EF2B51A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86A359D9-5219-42FB-B7B4-1A6856183FEF}
+	EndGlobalSection
+EndGlobal

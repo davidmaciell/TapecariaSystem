@@ -1,0 +1,10 @@
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\TapecariaSystem.exe.config
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\TapecariaSystem.exe
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\TapecariaSystem.pdb
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.AssemblyReference.cache
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.FormPrincipal.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.Properties.Resources.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.GenerateResource.cache
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CoreCompileInputs.cache
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.exe
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.pdb

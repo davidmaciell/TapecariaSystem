@@ -8,3 +8,4 @@ C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.Gener
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CoreCompileInputs.cache
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.exe
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.pdb
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.FormCadastroClient.resources

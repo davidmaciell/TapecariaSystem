@@ -31,15 +31,16 @@ namespace TapecariaSystem
         {
             this.MenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serviçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrocliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroservico = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastromaterial = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrofornecedor = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saídasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatoriossaidas = new System.Windows.Forms.ToolStripMenuItem();
+            this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPrincipal = new System.Windows.Forms.PictureBox();
+            this.cadastrousuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).BeginInit();
@@ -50,7 +51,7 @@ namespace TapecariaSystem
             this.MenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.relatóriosToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.sair});
             this.MenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
             this.MenuPrincipal.Size = new System.Drawing.Size(877, 24);
@@ -60,57 +61,60 @@ namespace TapecariaSystem
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem,
-            this.serviçoToolStripMenuItem,
-            this.materialToolStripMenuItem,
-            this.fornecedorToolStripMenuItem});
+            this.cadastrocliente,
+            this.cadastroservico,
+            this.cadastromaterial,
+            this.cadastrofornecedor,
+            this.cadastrousuarios});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
-            // clienteToolStripMenuItem
+            // cadastrocliente
             // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.cadastrocliente.Name = "cadastrocliente";
+            this.cadastrocliente.Size = new System.Drawing.Size(180, 22);
+            this.cadastrocliente.Text = "Cliente";
+            this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
-            // serviçoToolStripMenuItem
+            // cadastroservico
             // 
-            this.serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-            this.serviçoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.serviçoToolStripMenuItem.Text = "Serviço";
+            this.cadastroservico.Name = "cadastroservico";
+            this.cadastroservico.Size = new System.Drawing.Size(180, 22);
+            this.cadastroservico.Text = "Serviço";
             // 
-            // materialToolStripMenuItem
+            // cadastromaterial
             // 
-            this.materialToolStripMenuItem.Name = "materialToolStripMenuItem";
-            this.materialToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.materialToolStripMenuItem.Text = "Material";
+            this.cadastromaterial.Name = "cadastromaterial";
+            this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
+            this.cadastromaterial.Text = "Material";
             // 
-            // fornecedorToolStripMenuItem
+            // cadastrofornecedor
             // 
-            this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.fornecedorToolStripMenuItem.Text = "Fornecedor";
+            this.cadastrofornecedor.Name = "cadastrofornecedor";
+            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
+            this.cadastrofornecedor.Text = "Fornecedor";
             // 
             // relatóriosToolStripMenuItem
             // 
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saídasToolStripMenuItem});
+            this.relatoriossaidas});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
-            // sairToolStripMenuItem
+            // relatoriossaidas
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.relatoriossaidas.Name = "relatoriossaidas";
+            this.relatoriossaidas.Size = new System.Drawing.Size(180, 22);
+            this.relatoriossaidas.Text = "Saídas ";
             // 
-            // saídasToolStripMenuItem
+            // sair
             // 
-            this.saídasToolStripMenuItem.Name = "saídasToolStripMenuItem";
-            this.saídasToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.saídasToolStripMenuItem.Text = "Saídas ";
+            this.sair.Name = "sair";
+            this.sair.Size = new System.Drawing.Size(38, 20);
+            this.sair.Text = "Sair";
+            this.sair.Click += new System.EventHandler(this.sair_Click);
             // 
             // pictureBox1
             // 
@@ -130,6 +134,12 @@ namespace TapecariaSystem
             this.imgPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imgPrincipal.TabIndex = 1;
             this.imgPrincipal.TabStop = false;
+            // 
+            // cadastrousuarios
+            // 
+            this.cadastrousuarios.Name = "cadastrousuarios";
+            this.cadastrousuarios.Size = new System.Drawing.Size(180, 22);
+            this.cadastrousuarios.Text = "Usuários";
             // 
             // FormPrincipal
             // 
@@ -156,15 +166,16 @@ namespace TapecariaSystem
 
         private System.Windows.Forms.MenuStrip MenuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem serviçoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem materialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrocliente;
+        private System.Windows.Forms.ToolStripMenuItem cadastroservico;
+        private System.Windows.Forms.ToolStripMenuItem cadastromaterial;
+        private System.Windows.Forms.ToolStripMenuItem cadastrofornecedor;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saídasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatoriossaidas;
+        private System.Windows.Forms.ToolStripMenuItem sair;
         private System.Windows.Forms.PictureBox imgPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem cadastrousuarios;
     }
 }
 

@@ -29,18 +29,19 @@ namespace TapecariaSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.MenuPrincipal = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrocliente = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroservico = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastromaterial = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrofornecedor = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrousuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatoriossaidas = new System.Windows.Forms.ToolStripMenuItem();
             this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPrincipal = new System.Windows.Forms.PictureBox();
-            this.cadastrousuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).BeginInit();
@@ -73,27 +74,33 @@ namespace TapecariaSystem
             // cadastrocliente
             // 
             this.cadastrocliente.Name = "cadastrocliente";
-            this.cadastrocliente.Size = new System.Drawing.Size(180, 22);
+            this.cadastrocliente.Size = new System.Drawing.Size(134, 22);
             this.cadastrocliente.Text = "Cliente";
             this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
             // cadastroservico
             // 
             this.cadastroservico.Name = "cadastroservico";
-            this.cadastroservico.Size = new System.Drawing.Size(180, 22);
+            this.cadastroservico.Size = new System.Drawing.Size(134, 22);
             this.cadastroservico.Text = "Serviço";
             // 
             // cadastromaterial
             // 
             this.cadastromaterial.Name = "cadastromaterial";
-            this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
+            this.cadastromaterial.Size = new System.Drawing.Size(134, 22);
             this.cadastromaterial.Text = "Material";
             // 
             // cadastrofornecedor
             // 
             this.cadastrofornecedor.Name = "cadastrofornecedor";
-            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
+            this.cadastrofornecedor.Size = new System.Drawing.Size(134, 22);
             this.cadastrofornecedor.Text = "Fornecedor";
+            // 
+            // cadastrousuarios
+            // 
+            this.cadastrousuarios.Name = "cadastrousuarios";
+            this.cadastrousuarios.Size = new System.Drawing.Size(134, 22);
+            this.cadastrousuarios.Text = "Usuários";
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -106,7 +113,7 @@ namespace TapecariaSystem
             // relatoriossaidas
             // 
             this.relatoriossaidas.Name = "relatoriossaidas";
-            this.relatoriossaidas.Size = new System.Drawing.Size(180, 22);
+            this.relatoriossaidas.Size = new System.Drawing.Size(110, 22);
             this.relatoriossaidas.Text = "Saídas ";
             // 
             // sair
@@ -135,12 +142,6 @@ namespace TapecariaSystem
             this.imgPrincipal.TabIndex = 1;
             this.imgPrincipal.TabStop = false;
             // 
-            // cadastrousuarios
-            // 
-            this.cadastrousuarios.Name = "cadastrousuarios";
-            this.cadastrousuarios.Size = new System.Drawing.Size(180, 22);
-            this.cadastrousuarios.Text = "Usuários";
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +150,7 @@ namespace TapecariaSystem
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imgPrincipal);
             this.Controls.Add(this.MenuPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuPrincipal;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

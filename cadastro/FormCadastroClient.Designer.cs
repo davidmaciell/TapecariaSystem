@@ -35,11 +35,11 @@ namespace TapecariaSystem.cadastro
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtCPF = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -89,12 +89,12 @@ namespace TapecariaSystem.cadastro
             this.label5.TabIndex = 4;
             this.label5.Text = "Telefone";
             // 
-            // textBox1
+            // txtNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(243, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNome.Location = new System.Drawing.Point(108, 9);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(243, 20);
+            this.txtNome.TabIndex = 5;
             // 
             // textBox2
             // 
@@ -110,19 +110,19 @@ namespace TapecariaSystem.cadastro
             this.textBox3.Size = new System.Drawing.Size(243, 20);
             this.textBox3.TabIndex = 7;
             // 
-            // textBox4
+            // txtTelefone
             // 
-            this.textBox4.Location = new System.Drawing.Point(108, 82);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(243, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtTelefone.Location = new System.Drawing.Point(108, 82);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(243, 20);
+            this.txtTelefone.TabIndex = 8;
             // 
-            // textBox5
+            // txtCPF
             // 
-            this.textBox5.Location = new System.Drawing.Point(108, 47);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(243, 20);
-            this.textBox5.TabIndex = 9;
+            this.txtCPF.Location = new System.Drawing.Point(108, 47);
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(243, 20);
+            this.txtCPF.TabIndex = 9;
             // 
             // dataGridView1
             // 
@@ -141,11 +141,11 @@ namespace TapecariaSystem.cadastro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 476);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtCPF);
+            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,11 +168,11 @@ namespace TapecariaSystem.cadastro
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

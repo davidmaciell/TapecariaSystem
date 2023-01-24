@@ -37,16 +37,16 @@ namespace TapecariaSystem.cadastro
             this.txtEndere = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
-            this.txtCep = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,27 +109,6 @@ namespace TapecariaSystem.cadastro
             this.txtEndereco.Size = new System.Drawing.Size(243, 20);
             this.txtEndereco.TabIndex = 6;
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(545, 63);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(243, 20);
-            this.txtTelefone.TabIndex = 7;
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(108, 110);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(243, 20);
-            this.txtCep.TabIndex = 8;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(108, 60);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(243, 20);
-            this.txtCpf.TabIndex = 9;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -187,12 +166,37 @@ namespace TapecariaSystem.cadastro
             this.label5.TabIndex = 15;
             this.label5.Text = "Celular";
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(108, 59);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(109, 20);
+            this.txtCpf.TabIndex = 17;
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(108, 114);
+            this.txtCep.Mask = "00000-000";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(100, 20);
+            this.txtCep.TabIndex = 18;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(545, 63);
+            this.txtTelefone.Mask = "(99) 0000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(118, 20);
+            this.txtTelefone.TabIndex = 19;
+            // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(545, 113);
+            this.txtCelular.Location = new System.Drawing.Point(545, 114);
+            this.txtCelular.Mask = "(99) 00000-0000";
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(243, 20);
-            this.txtCelular.TabIndex = 16;
+            this.txtCelular.Size = new System.Drawing.Size(118, 20);
+            this.txtCelular.TabIndex = 20;
             // 
             // FormCadastroClient
             // 
@@ -200,15 +204,15 @@ namespace TapecariaSystem.cadastro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 476);
             this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.txtCep);
-            this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtEndere);
@@ -235,15 +239,15 @@ namespace TapecariaSystem.cadastro
         private System.Windows.Forms.Label txtEndere;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.TextBox txtCep;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
     }
 }

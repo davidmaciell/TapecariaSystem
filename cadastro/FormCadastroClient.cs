@@ -23,6 +23,21 @@ namespace TapecariaSystem.cadastro
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            //fazendo o tratamento dos dados 
+            if (txtNome.Text.ToString().Trim() == "") //tirando os espaços
+            {
+                MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
+                txtNome.Focus();
+                return;
+            }
+            if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
+            {
+                MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCpf.Focus();
+                return;
+            }
+
             con.AbrirConexao();
             sql = "INSERT INTO tb_cliente ( nome_cliente, endereco_cliente, cep_cliente, cpf_cliente, telefone_cliente, celular_cliente)VALUES( @nome, @endereco, @cep, @cpf, @telefone, @celular)";
 

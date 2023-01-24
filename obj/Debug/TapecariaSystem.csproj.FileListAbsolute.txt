@@ -9,3 +9,7 @@ C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CoreC
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.exe
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.pdb
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.FormCadastroClient.resources
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\MySql.Data.dll
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CopyComplete

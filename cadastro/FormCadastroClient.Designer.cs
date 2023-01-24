@@ -47,6 +47,7 @@ namespace TapecariaSystem.cadastro
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,7 @@ namespace TapecariaSystem.cadastro
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(108, 9);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(243, 20);
@@ -104,6 +106,7 @@ namespace TapecariaSystem.cadastro
             // 
             // txtEndereco
             // 
+            this.txtEndereco.Enabled = false;
             this.txtEndereco.Location = new System.Drawing.Point(545, 12);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(243, 20);
@@ -122,16 +125,18 @@ namespace TapecariaSystem.cadastro
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(168, 423);
+            this.btnNovo.Location = new System.Drawing.Point(133, 423);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(75, 23);
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(444, 423);
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(515, 423);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 12;
@@ -140,7 +145,8 @@ namespace TapecariaSystem.cadastro
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(302, 423);
+            this.btnSalvar.Enabled = false;
+            this.btnSalvar.Location = new System.Drawing.Point(261, 423);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 13;
@@ -150,7 +156,8 @@ namespace TapecariaSystem.cadastro
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(571, 423);
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Location = new System.Drawing.Point(641, 423);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 14;
@@ -168,6 +175,7 @@ namespace TapecariaSystem.cadastro
             // 
             // txtCpf
             // 
+            this.txtCpf.Enabled = false;
             this.txtCpf.Location = new System.Drawing.Point(108, 59);
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
@@ -176,6 +184,7 @@ namespace TapecariaSystem.cadastro
             // 
             // txtCep
             // 
+            this.txtCep.Enabled = false;
             this.txtCep.Location = new System.Drawing.Point(108, 114);
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
@@ -184,6 +193,7 @@ namespace TapecariaSystem.cadastro
             // 
             // txtTelefone
             // 
+            this.txtTelefone.Enabled = false;
             this.txtTelefone.Location = new System.Drawing.Point(545, 63);
             this.txtTelefone.Mask = "(99) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
@@ -192,17 +202,28 @@ namespace TapecariaSystem.cadastro
             // 
             // txtCelular
             // 
+            this.txtCelular.Enabled = false;
             this.txtCelular.Location = new System.Drawing.Point(545, 114);
             this.txtCelular.Mask = "(99) 00000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(118, 20);
             this.txtCelular.TabIndex = 20;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(387, 423);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // FormCadastroClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 476);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCep);
@@ -249,5 +270,6 @@ namespace TapecariaSystem.cadastro
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

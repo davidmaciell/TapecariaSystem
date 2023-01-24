@@ -28,7 +28,7 @@ namespace TapecariaSystem.cadastro
             {
                 MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
-                txtNome.Focus();
+                txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher
                 return;
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
@@ -52,6 +52,40 @@ namespace TapecariaSystem.cadastro
 
             cmd.ExecuteNonQuery();
             con.FecharConexao();
+
+            MessageBox.Show("Salvo com sucesso!" , "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnNovo.Enabled = true;
+            btnSalvar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false; 
+            LimparCampos();
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
+        }
+
+        private void habilitarCampos()
+        {
+            btnSalvar.Enabled = true;
+            txtNome.Enabled = true;
+            txtCpf.Enabled = true;
+            txtCep.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtTelefone.Enabled = true;
+            txtCelular.Enabled = true;
+            btnNovo.Enabled = false;
+        }
+        private void LimparCampos()
+        {
+            txtNome.Text = "";
+            txtCpf.Text = "";
+            txtCep.Text = "";
+            txtEndereco.Text = "";
+            txtTelefone.Text = "";
+            txtCelular.Text = "";
         }
     }
+    
 }

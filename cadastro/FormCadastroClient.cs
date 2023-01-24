@@ -28,13 +28,15 @@ namespace TapecariaSystem.cadastro
             {
                 MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
-                txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher
+                txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher             
+                btnCancelar.Enabled = true;
                 return;
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
             {
                 MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCpf.Focus();
+                btnCancelar.Enabled = true;
                 return;
             }
 
@@ -57,8 +59,10 @@ namespace TapecariaSystem.cadastro
             btnNovo.Enabled = true;
             btnSalvar.Enabled = false;
             btnEditar.Enabled = false;
-            btnExcluir.Enabled = false; 
+            btnExcluir.Enabled = false;
             LimparCampos();
+            desabilitarCampos();
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -77,6 +81,16 @@ namespace TapecariaSystem.cadastro
             txtCelular.Enabled = true;
             btnNovo.Enabled = false;
         }
+        private void desabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtCpf.Enabled = false;
+            txtCep.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtTelefone.Enabled = false;
+            txtCelular.Enabled = false;
+            return;
+        }
         private void LimparCampos()
         {
             txtNome.Text = "";
@@ -85,6 +99,16 @@ namespace TapecariaSystem.cadastro
             txtEndereco.Text = "";
             txtTelefone.Text = "";
             txtCelular.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            desabilitarCampos();
+            btnNovo.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnSalvar.Enabled = false;
+            return;
         }
     }
     

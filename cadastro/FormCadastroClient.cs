@@ -29,15 +29,11 @@ namespace TapecariaSystem.cadastro
                 MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
                 txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher             
-                btnCancelar.Enabled = true;
-                return;
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
             {
                 MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCpf.Focus();
-                btnCancelar.Enabled = true;
-                return;
             }
 
             con.AbrirConexao();
@@ -89,7 +85,6 @@ namespace TapecariaSystem.cadastro
             txtEndereco.Enabled = false;
             txtTelefone.Enabled = false;
             txtCelular.Enabled = false;
-            return;
         }
         private void LimparCampos()
         {
@@ -106,9 +101,8 @@ namespace TapecariaSystem.cadastro
             LimparCampos();
             desabilitarCampos();
             btnNovo.Enabled = true;
-            btnCancelar.Enabled = false;
+            //btnCancelar.Enabled = false;
             btnSalvar.Enabled = false;
-            return;
         }
     }
     

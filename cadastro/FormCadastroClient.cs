@@ -28,7 +28,7 @@ namespace TapecariaSystem.cadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //fazendo o tratamento dos dados 
-            if (txtNome.Text.ToString().Trim() == "") //tirando os espaços
+            if (txtNome.Text.ToString() == "") //tirando os espaços
             {
                 MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
@@ -45,8 +45,8 @@ namespace TapecariaSystem.cadastro
 
             cmd = new MySqlCommand(sql, con.con);
 
-            cmd.Parameters.AddWithValue("@nome", txtNome.Text);
-            cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
+            cmd.Parameters.AddWithValue("@nome", txtNome.Text.ToUpper().Trim());
+            cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text.ToUpper().Trim());
             cmd.Parameters.AddWithValue("@cep", txtCep.Text);
             cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
             cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);

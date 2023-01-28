@@ -37,7 +37,7 @@ namespace TapecariaSystem.cadastro
             this.txtEndere = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grid = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@ namespace TapecariaSystem.cadastro
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +102,7 @@ namespace TapecariaSystem.cadastro
             this.txtNome.Location = new System.Drawing.Point(108, 9);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(243, 20);
-            this.txtNome.TabIndex = 5;
+            this.txtNome.TabIndex = 1;
             // 
             // txtEndereco
             // 
@@ -110,18 +110,19 @@ namespace TapecariaSystem.cadastro
             this.txtEndereco.Location = new System.Drawing.Point(545, 12);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(243, 20);
-            this.txtEndereco.TabIndex = 6;
+            this.txtEndereco.TabIndex = 4;
             // 
-            // dataGridView1
+            // grid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 197);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 203);
-            this.dataGridView1.TabIndex = 10;
+            this.grid.AllowUserToAddRows = false;
+            this.grid.AllowUserToDeleteRows = false;
+            this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid.Location = new System.Drawing.Point(39, 197);
+            this.grid.Name = "grid";
+            this.grid.ReadOnly = true;
+            this.grid.Size = new System.Drawing.Size(787, 203);
+            this.grid.TabIndex = 10;
+            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
             // 
             // btnNovo
             // 
@@ -149,7 +150,7 @@ namespace TapecariaSystem.cadastro
             this.btnSalvar.Location = new System.Drawing.Point(261, 423);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 13;
+            this.btnSalvar.TabIndex = 7;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -180,7 +181,7 @@ namespace TapecariaSystem.cadastro
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(109, 20);
-            this.txtCpf.TabIndex = 17;
+            this.txtCpf.TabIndex = 2;
             // 
             // txtCep
             // 
@@ -189,7 +190,7 @@ namespace TapecariaSystem.cadastro
             this.txtCep.Mask = "00000-000";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(100, 20);
-            this.txtCep.TabIndex = 18;
+            this.txtCep.TabIndex = 3;
             // 
             // txtTelefone
             // 
@@ -198,7 +199,7 @@ namespace TapecariaSystem.cadastro
             this.txtTelefone.Mask = "(99) 0000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(118, 20);
-            this.txtTelefone.TabIndex = 19;
+            this.txtTelefone.TabIndex = 5;
             // 
             // txtCelular
             // 
@@ -207,14 +208,14 @@ namespace TapecariaSystem.cadastro
             this.txtCelular.Mask = "(99) 00000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(118, 20);
-            this.txtCelular.TabIndex = 20;
+            this.txtCelular.TabIndex = 6;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(387, 423);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -234,7 +235,7 @@ namespace TapecariaSystem.cadastro
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grid);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtEndere);
@@ -246,7 +247,8 @@ namespace TapecariaSystem.cadastro
             this.Name = "FormCadastroClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormCadastroClient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,7 +263,7 @@ namespace TapecariaSystem.cadastro
         private System.Windows.Forms.Label txtEndere;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;

@@ -20,6 +20,10 @@ namespace TapecariaSystem.cadastro
         {
             InitializeComponent();
         }
+        private void FormCadastroClient_Load(object sender, EventArgs e)
+        {
+            Listar();
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -57,6 +61,7 @@ namespace TapecariaSystem.cadastro
             btnEditar.Enabled = false;
             btnExcluir.Enabled = false;
             LimparCampos();
+            Listar();    //logo após salvar ele já atualiza a lista para mostrar o que acabei de cadastrar
             desabilitarCampos();
 
         }
@@ -64,6 +69,7 @@ namespace TapecariaSystem.cadastro
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCampos();
+            txtNome.Focus();
         }
 
         private void habilitarCampos()
@@ -103,6 +109,59 @@ namespace TapecariaSystem.cadastro
             btnNovo.Enabled = true;
             //btnCancelar.Enabled = false;
             btnSalvar.Enabled = false;
+        }
+
+        private void FormatarGD()  //formatação dos meus campos da grid
+        {
+            grid.Columns[0].HeaderText = "ID";
+            grid.Columns[1].HeaderText = "Nome";
+            grid.Columns[2].HeaderText = "Endereço";
+            grid.Columns[3].HeaderText = "CEP";
+            grid.Columns[4].HeaderText = "CPF";
+            grid.Columns[5].HeaderText = "Telefone";
+            grid.Columns[6].HeaderText = "Celular";
+
+            //grid.Columns[5].Width = 50;
+            grid.Columns[0].Visible = false;
+        }
+        private void Listar()  //esse função vai trazer os dados do banco para minha grid
+        {
+            con.AbrirConexao();  //chamo o abrir conexão 
+            sql = "SELECT * FROM tb_cliente ORDER BY nome_cliente asc";
+            cmd = new MySqlCommand(sql, con.con);
+            MySqlDataAdapter da = new MySqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            grid.DataSource = dt;
+            con.FecharConexao();
+
+            FormatarGD();
+        }
+
+        //private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+            //MessageBox.Show("dfs");
+        //}
+
+        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1) { 
+                habilitarCampos();
+                btnEditar.Enabled = true;
+                btnExcluir.Enabled = true;
+                txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
+                txtEndereco.Text = grid.CurrentRow.Cells[2].Value.ToString();
+                txtCep.Text = grid.CurrentRow.Cells[3].Value.ToString();
+                txtCpf.Text = grid.CurrentRow.Cells[4].Value.ToString();
+                txtTelefone.Text = grid.CurrentRow.Cells[5].Value.ToString();
+                txtCelular.Text = grid.CurrentRow.Cells[6].Value.ToString();
+
+            }
+            else
+            {
+                return;
+            }
         }
     }
     

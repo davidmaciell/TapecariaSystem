@@ -15,6 +15,8 @@ namespace TapecariaSystem.cadastro
     {
         Conexao con = new Conexao();
         string sql;
+        string varid;
+        string cpfAntigo;
         MySqlCommand cmd;
         public FormCadastroClient()
         {
@@ -50,12 +52,12 @@ namespace TapecariaSystem.cadastro
             cmd.Parameters.AddWithValue("@cep", txtCep.Text);
             cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
             cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
-            cmd.Parameters.AddWithValue("@celular",txtCelular.Text);
+            cmd.Parameters.AddWithValue("@celular", txtCelular.Text);
 
             cmd.ExecuteNonQuery();
             con.FecharConexao();
 
-            MessageBox.Show("Salvo com sucesso!" , "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Salvo com sucesso!", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnNovo.Enabled = true;
             btnSalvar.Enabled = false;
             btnEditar.Enabled = false;
@@ -141,17 +143,20 @@ namespace TapecariaSystem.cadastro
 
         //private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
-            //MessageBox.Show("dfs");
+        //MessageBox.Show("dfs");
         //}
 
         private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1) { 
+            if (e.RowIndex > -1)
+            {
                 habilitarCampos();
                 btnEditar.Enabled = true;
                 btnExcluir.Enabled = true;
+                varid = grid.CurrentRow.Cells[0].Value.ToString();// essa váriavel que declarei no começo vai receber o id para edição.
                 txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
                 txtEndereco.Text = grid.CurrentRow.Cells[2].Value.ToString();
+                cpfAntigo = grid.CurrentRow.Cells[2].Value.ToString();
                 txtCep.Text = grid.CurrentRow.Cells[3].Value.ToString();
                 txtCpf.Text = grid.CurrentRow.Cells[4].Value.ToString();
                 txtTelefone.Text = grid.CurrentRow.Cells[5].Value.ToString();
@@ -163,6 +168,45 @@ namespace TapecariaSystem.cadastro
                 return;
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtNome.Text.ToString().Trim() == "")
+            {
+                MessageBox.Show("Preencha o Campo Nome", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Text = "";
+                txtNome.Focus();
+                return;
+            }
+            if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
+            {
+                MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCpf.Focus();
+                return;
+            }
+
+            con.AbrirConexao();
+            sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id = @id";
+            cmd = new MySqlCommand(sql, con.con);
+            cmd.Parameters.AddWithValue("@id", varid);
+            cmd.Parameters.AddWithValue("@nome", txtNome.Text);
+            cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
+            cmd.Parameters.AddWithValue("@cep", txtCep.Text);
+            cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
+            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+            cmd.Parameters.AddWithValue("@celular", txtCelular.Text);
+
+            //verificação cpf
+            if (txtCpf.Text != cpfAntigo)
+            {
+                MySqlCommand cmdVerificar;
+                cmdVerificar = new MySqlCommand("SELECT * FROM funcionários WHERE cpf = @cpf", con.con);
+
+                //continuarr daqui... botão editar
+            }
+
+        }
+
+
     }
-    
 }

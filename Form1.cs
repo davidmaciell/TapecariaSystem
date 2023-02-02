@@ -27,5 +27,11 @@ namespace TapecariaSystem
             cadastro.FormCadastroClient frm = new cadastro.FormCadastroClient();
             frm.ShowDialog();
         }
+
+        private void cadastrofornecedor_Click(object sender, EventArgs e)
+        {
+            cadastro.FormCadastroForn frm = new cadastro.FormCadastroForn();
+            frm.ShowDialog();
+        }
     }
 }

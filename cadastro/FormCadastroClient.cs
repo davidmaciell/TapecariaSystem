@@ -171,6 +171,8 @@ namespace TapecariaSystem.cadastro
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("fs");
+            
             if (txtNome.Text.ToString().Trim() == "")
             {
                 MessageBox.Show("Preencha o Campo Nome", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -186,15 +188,15 @@ namespace TapecariaSystem.cadastro
             }
 
             con.AbrirConexao();
-            sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id = @id";
+            sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id_cliente = @id";
             cmd = new MySqlCommand(sql, con.con);
-            cmd.Parameters.AddWithValue("@id", varid);
-            cmd.Parameters.AddWithValue("@nome", txtNome.Text);
-            cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
-            cmd.Parameters.AddWithValue("@cep", txtCep.Text);
-            cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-            cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
-            cmd.Parameters.AddWithValue("@celular", txtCelular.Text);
+            cmd.Parameters.AddWithValue("@id_cliente", varid);
+            cmd.Parameters.AddWithValue("@nome_cliente", txtNome.Text.ToUpper().Trim());
+            cmd.Parameters.AddWithValue("@endereco_cliente", txtEndereco.Text.ToUpper().Trim());
+            cmd.Parameters.AddWithValue("@cep_cliente", txtCep.Text);
+            cmd.Parameters.AddWithValue("@cpf_cliente", txtCpf.Text);
+            cmd.Parameters.AddWithValue("@telefone_cliente", txtTelefone.Text);
+            cmd.Parameters.AddWithValue("@celular_cliente", txtCelular.Text);
 
             //verificação cpf
             if (txtCpf.Text != cpfAntigo)
@@ -202,11 +204,10 @@ namespace TapecariaSystem.cadastro
                 MySqlCommand cmdVerificar;
                 cmdVerificar = new MySqlCommand("SELECT * FROM funcionários WHERE cpf = @cpf", con.con);
 
-                //continuarr daqui... botão editar
+                //continuarr daqui... botão editar   ,, botão editar não está funcionando, só replica a informação no db
             }
 
         }
-
 
     }
 }

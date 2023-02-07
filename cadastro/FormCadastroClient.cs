@@ -146,68 +146,90 @@ namespace TapecariaSystem.cadastro
         //MessageBox.Show("dfs");
         //}
 
-        private void grid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1)
-            {
-                habilitarCampos();
-                btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;
-                varid = grid.CurrentRow.Cells[0].Value.ToString();// essa váriavel que declarei no começo vai receber o id para edição.
-                txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
-                txtEndereco.Text = grid.CurrentRow.Cells[2].Value.ToString();
-                cpfAntigo = grid.CurrentRow.Cells[2].Value.ToString();
-                txtCep.Text = grid.CurrentRow.Cells[3].Value.ToString();
-                txtCpf.Text = grid.CurrentRow.Cells[4].Value.ToString();
-                txtTelefone.Text = grid.CurrentRow.Cells[5].Value.ToString();
-                txtCelular.Text = grid.CurrentRow.Cells[6].Value.ToString();
-
-            }
-            else
-            {
-                return;
-            }
-        }
+                    habilitarCampos();
+                    btnEditar.Enabled = true;
+                    btnExcluir.Enabled = true;
+                    varid = grid.CurrentRow.Cells[0].Value.ToString();// essa váriavel que declarei no começo vai receber o id para edição.
+                    txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
+                    txtEndereco.Text = grid.CurrentRow.Cells[2].Value.ToString();
+                    cpfAntigo = grid.CurrentRow.Cells[4].Value.ToString();
+                    txtCep.Text = grid.CurrentRow.Cells[3].Value.ToString();
+                    txtCpf.Text = grid.CurrentRow.Cells[4].Value.ToString();
+                    txtTelefone.Text = grid.CurrentRow.Cells[5].Value.ToString();
+                    txtCelular.Text = grid.CurrentRow.Cells[6].Value.ToString();
+                }
+          
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("fs");
-            
-            if (txtNome.Text.ToString().Trim() == "")
-            {
-                MessageBox.Show("Preencha o Campo Nome", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Text = "";
-                txtNome.Focus();
-                return;
-            }
-            if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
-            {
-                MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCpf.Focus();
-                return;
-            }
-
-            con.AbrirConexao();
-            sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id_cliente = @id";
-            cmd = new MySqlCommand(sql, con.con);
-            cmd.Parameters.AddWithValue("@id_cliente", varid);
-            cmd.Parameters.AddWithValue("@nome_cliente", txtNome.Text.ToUpper().Trim());
-            cmd.Parameters.AddWithValue("@endereco_cliente", txtEndereco.Text.ToUpper().Trim());
-            cmd.Parameters.AddWithValue("@cep_cliente", txtCep.Text);
-            cmd.Parameters.AddWithValue("@cpf_cliente", txtCpf.Text);
-            cmd.Parameters.AddWithValue("@telefone_cliente", txtTelefone.Text);
-            cmd.Parameters.AddWithValue("@celular_cliente", txtCelular.Text);
-
-            //verificação cpf
-            if (txtCpf.Text != cpfAntigo)
-            {
-                MySqlCommand cmdVerificar;
-                cmdVerificar = new MySqlCommand("SELECT * FROM funcionários WHERE cpf = @cpf", con.con);
-
-                //continuarr daqui... botão editar   ,, botão editar não está funcionando, só replica a informação no db
-            }
 
         }
-
     }
-}
+
+    //private void btnEditar_Click(object sender, EventArgs e)
+    //    {
+    //        MessageBox.Show("fs");
+            
+    //        if (txtNome.Text.ToString().Trim() == "")
+    //        {
+    //            MessageBox.Show("Preencha o Campo Nome", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    //            txtNome.Text = "";
+    //            txtNome.Focus();
+    //            return;
+    //        }
+    //        if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
+    //        {
+    //            MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    //            txtCpf.Focus();
+    //            return;
+    //        }
+
+    //        con.AbrirConexao();
+    //        sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id_cliente = @ID";
+    //        cmd = new MySqlCommand(sql, con.con);
+    //        cmd.Parameters.AddWithValue("@ID", varid);
+    //        cmd.Parameters.AddWithValue("@nome_cliente", txtNome.Text);
+    //        cmd.Parameters.AddWithValue("@endereco_cliente", txtEndereco.Text);
+    //        cmd.Parameters.AddWithValue("@cep_cliente", txtCep.Text);
+    //        cmd.Parameters.AddWithValue("@cpf_cliente", txtCpf.Text);
+    //        cmd.Parameters.AddWithValue("@telefone_cliente", txtTelefone.Text);
+    //        cmd.Parameters.AddWithValue("@celular_cliente", txtCelular.Text);
+
+    //        //verificação cpf já existe
+    //        if (txtCpf.Text != cpfAntigo)
+    //        {
+    //            MySqlCommand cmdVerificar;
+    //            cmdVerificar = new MySqlCommand("SELECT * FROM funcionários WHERE cpf = @cpf", con.con);
+    //            MySqlDataAdapter da = new MySqlDataAdapter();
+    //            da.SelectCommand = cmdVerificar;
+    //            cmdVerificar.Parameters.AddWithValue("@cpf", txtCpf.Text);
+    //            DataTable dt = new DataTable();
+    //            da.Fill(dt);
+    //            if (dt.Rows.Count > 0)
+    //            {
+    //                MessageBox.Show("CPF já Existe", "Cadastro de Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+    //                txtCpf.Text = "";
+    //                txtCpf.Focus();
+    //                return;
+    //            }
+
+               
+    //        }
+    //        cmd.ExecuteNonQuery();
+    //        con.FecharConexao();
+    //        Listar();
+
+    //        MessageBox.Show("Registro Editado com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    //        btnNovo.Enabled = true;
+    //        btnEditar.Enabled = true;
+    //        btnExcluir.Enabled = true;
+    //        btnSalvar.Enabled = true;
+    //        desabilitarCampos();
+    //        LimparCampos();
+
+        } //fiz dessa forma mas o editar não funciona... pesquisar melhor maneira
+
+    
+

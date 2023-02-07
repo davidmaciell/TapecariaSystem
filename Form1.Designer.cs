@@ -95,7 +95,7 @@ namespace TapecariaSystem
             this.cadastrofornecedor.Name = "cadastrofornecedor";
             this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
             this.cadastrofornecedor.Text = "Fornecedor";
-            this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click);
+            //this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click); descomentar depois
             // 
             // cadastrousuarios
             // 

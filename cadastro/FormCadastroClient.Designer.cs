@@ -122,7 +122,7 @@ namespace TapecariaSystem.cadastro
             this.grid.ReadOnly = true;
             this.grid.Size = new System.Drawing.Size(787, 203);
             this.grid.TabIndex = 10;
-            this.grid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellClick);
+            this.grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellDoubleClick);
             // 
             // btnNovo
             // 

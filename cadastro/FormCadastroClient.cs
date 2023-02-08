@@ -74,6 +74,7 @@ namespace TapecariaSystem.cadastro
             habilitarCampos();
             txtNome.Focus();
             btnCancelar.Enabled = true;
+            btnEditar.Enabled = false;
         }
 
         private void habilitarCampos()

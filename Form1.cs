@@ -27,5 +27,7 @@ namespace TapecariaSystem
             cadastro.FormCadastroClient frm = new cadastro.FormCadastroClient();
             frm.ShowDialog();
         }
+
+        
     }
 }

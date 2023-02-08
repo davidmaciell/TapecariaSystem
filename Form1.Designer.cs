@@ -74,32 +74,33 @@ namespace TapecariaSystem
             // cadastrocliente
             // 
             this.cadastrocliente.Name = "cadastrocliente";
-            this.cadastrocliente.Size = new System.Drawing.Size(134, 22);
+            this.cadastrocliente.Size = new System.Drawing.Size(180, 22);
             this.cadastrocliente.Text = "Cliente";
             this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
             // cadastroservico
             // 
             this.cadastroservico.Name = "cadastroservico";
-            this.cadastroservico.Size = new System.Drawing.Size(134, 22);
+            this.cadastroservico.Size = new System.Drawing.Size(180, 22);
             this.cadastroservico.Text = "Serviço";
             // 
             // cadastromaterial
             // 
             this.cadastromaterial.Name = "cadastromaterial";
-            this.cadastromaterial.Size = new System.Drawing.Size(134, 22);
+            this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
             this.cadastromaterial.Text = "Material";
             // 
             // cadastrofornecedor
             // 
             this.cadastrofornecedor.Name = "cadastrofornecedor";
-            this.cadastrofornecedor.Size = new System.Drawing.Size(134, 22);
+            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
             this.cadastrofornecedor.Text = "Fornecedor";
+            //this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click); descomentar depois
             // 
             // cadastrousuarios
             // 
             this.cadastrousuarios.Name = "cadastrousuarios";
-            this.cadastrousuarios.Size = new System.Drawing.Size(134, 22);
+            this.cadastrousuarios.Size = new System.Drawing.Size(180, 22);
             this.cadastrousuarios.Text = "Usuários";
             // 
             // relatóriosToolStripMenuItem

@@ -44,7 +44,7 @@ namespace TapecariaSystem.cadastro
             }
 
             con.AbrirConexao();
-            sql = "INSERT INTO tb_cliente ( nome_cliente, endereco_cliente, cep_cliente, cpf_cliente, telefone_cliente, celular_cliente)VALUES( @nome, @endereco, @cep, @cpf, @telefone, @celular)";
+            sql = "INSERT INTO tb_cliente ( nome_cliente, endereco_cliente, cep_cliente, cpf_cliente, telefone_cliente, celular_cliente, date)VALUES( @nome, @endereco, @cep, @cpf, @telefone, @celular, curDate())";
 
             cmd = new MySqlCommand(sql, con.con);
 
@@ -126,6 +126,7 @@ namespace TapecariaSystem.cadastro
             grid.Columns[4].HeaderText = "CPF";
             grid.Columns[5].HeaderText = "Telefone";
             grid.Columns[6].HeaderText = "Celular";
+            grid.Columns[7].HeaderText = "Data";
 
             //grid.Columns[5].Width = 50;
             grid.Columns[0].Visible = false;
@@ -151,6 +152,7 @@ namespace TapecariaSystem.cadastro
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
             btnSalvar.Enabled = false;
+            btnCancelar.Enabled = true;
             varid = grid.CurrentRow.Cells[0].Value.ToString();// essa váriavel que declarei no começo vai receber o id para edição.
             txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
             txtEndereco.Text = grid.CurrentRow.Cells[2].Value.ToString();
@@ -219,6 +221,26 @@ namespace TapecariaSystem.cadastro
                 btnSalvar.Enabled = true;
                 desabilitarCampos();
                 LimparCampos();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            con.AbrirConexao();
+            sql = "DELETE FROM tb_cliente WHERE id_cliente = @id";
+            cmd = new MySqlCommand(sql, con.con);
+            cmd.Parameters.AddWithValue("@id", varid);
+
+            cmd.ExecuteNonQuery();
+            con.FecharConexao();
+            Listar();
+
+            MessageBox.Show("Registro Excluído com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnNovo.Enabled = true;
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnSalvar.Enabled = true;
+            desabilitarCampos();
+            LimparCampos();
         }
     }
 }

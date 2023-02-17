@@ -210,31 +210,11 @@ namespace TapecariaSystem.cadastro
 
 
             }
-                cmd.ExecuteNonQuery();
-                con.FecharConexao();
-                Listar();
-
-                MessageBox.Show("Registro Editado com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnNovo.Enabled = true;
-                btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;
-                btnSalvar.Enabled = true;
-                desabilitarCampos();
-                LimparCampos();
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            con.AbrirConexao();
-            sql = "DELETE FROM tb_cliente WHERE id_cliente = @id";
-            cmd = new MySqlCommand(sql, con.con);
-            cmd.Parameters.AddWithValue("@id", varid);
-
             cmd.ExecuteNonQuery();
             con.FecharConexao();
             Listar();
 
-            MessageBox.Show("Registro Excluído com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro Editado com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnNovo.Enabled = true;
             btnEditar.Enabled = true;
             btnExcluir.Enabled = true;
@@ -242,6 +222,34 @@ namespace TapecariaSystem.cadastro
             desabilitarCampos();
             LimparCampos();
         }
-    }
-}
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            DialogResult DialogResult = MessageBox.Show("Deseja mesmo Excluir", "Cadastro Funcionários", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                con.AbrirConexao();
+                sql = "DELETE FROM tb_cliente WHERE id_cliente = @id";
+                cmd = new MySqlCommand(sql, con.con);
+                cmd.Parameters.AddWithValue("@id", varid);
+
+                cmd.ExecuteNonQuery();
+                con.FecharConexao();
+                Listar();
+
+                MessageBox.Show("Registro Excluído com Sucesso", "Cadastro Funcionários", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnNovo.Enabled = true;
+                btnEditar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnSalvar.Enabled = true;
+                desabilitarCampos();
+                LimparCampos();
+
+            }
+            else if (DialogResult == DialogResult.No) {
+                Listar();
+            }
+        }
+    }
+
+}

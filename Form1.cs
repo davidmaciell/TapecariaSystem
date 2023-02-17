@@ -19,7 +19,15 @@ namespace TapecariaSystem
 
         private void sair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult DialogResult = MessageBox.Show("Deseja mesmo Sair? ", "Tapeçaria System", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else if (DialogResult == DialogResult.No)
+            {
+                return;
+            }
         }
 
         private void cadastrocliente_Click(object sender, EventArgs e)
@@ -28,6 +36,10 @@ namespace TapecariaSystem
             frm.ShowDialog();
         }
 
-        
+        private void cadastrofornecedor_Click(object sender, EventArgs e)
+        {
+            cadastro.fornecedor frm = new cadastro.fornecedor();
+            frm.ShowDialog();
+        }
     }
 }

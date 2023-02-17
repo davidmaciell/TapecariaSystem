@@ -74,33 +74,33 @@ namespace TapecariaSystem
             // cadastrocliente
             // 
             this.cadastrocliente.Name = "cadastrocliente";
-            this.cadastrocliente.Size = new System.Drawing.Size(180, 22);
+            this.cadastrocliente.Size = new System.Drawing.Size(134, 22);
             this.cadastrocliente.Text = "Cliente";
             this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
             // cadastroservico
             // 
             this.cadastroservico.Name = "cadastroservico";
-            this.cadastroservico.Size = new System.Drawing.Size(180, 22);
+            this.cadastroservico.Size = new System.Drawing.Size(134, 22);
             this.cadastroservico.Text = "Serviço";
             // 
             // cadastromaterial
             // 
             this.cadastromaterial.Name = "cadastromaterial";
-            this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
+            this.cadastromaterial.Size = new System.Drawing.Size(134, 22);
             this.cadastromaterial.Text = "Material";
             // 
             // cadastrofornecedor
             // 
             this.cadastrofornecedor.Name = "cadastrofornecedor";
-            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
+            this.cadastrofornecedor.Size = new System.Drawing.Size(134, 22);
             this.cadastrofornecedor.Text = "Fornecedor";
             this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click);
             // 
             // cadastrousuarios
             // 
             this.cadastrousuarios.Name = "cadastrousuarios";
-            this.cadastrousuarios.Size = new System.Drawing.Size(180, 22);
+            this.cadastrousuarios.Size = new System.Drawing.Size(134, 22);
             this.cadastrousuarios.Text = "Usuários";
             // 
             // relatóriosToolStripMenuItem
@@ -126,10 +126,13 @@ namespace TapecariaSystem
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TapecariaSystem.Properties.Resources.sofa1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 39);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::TapecariaSystem.Properties.Resources.sofaM;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(853, 399);
+            this.pictureBox1.Size = new System.Drawing.Size(877, 426);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -156,6 +159,7 @@ namespace TapecariaSystem
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

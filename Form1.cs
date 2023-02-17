@@ -41,5 +41,6 @@ namespace TapecariaSystem
             cadastro.fornecedor frm = new cadastro.fornecedor();
             frm.ShowDialog();
         }
+
     }
 }

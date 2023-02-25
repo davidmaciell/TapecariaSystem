@@ -13,7 +13,7 @@ namespace TapecariaSystem.cadastro
 {
     public partial class FormCadastroClient : Form
     {
-        Conexao con = new Conexao();
+        Conexao con = new Conexao(); 
         string sql;
         string varid;
         string cpfAntigo;
@@ -225,7 +225,10 @@ namespace TapecariaSystem.cadastro
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            DialogResult DialogResult = MessageBox.Show("Deseja mesmo Excluir", "Cadastro Funcionários", MessageBoxButtons.YesNo);
+            string nomeTemp;
+            nomeTemp = txtNome.Text;
+
+            DialogResult DialogResult = MessageBox.Show($"Deseja mesmo Excluir {nomeTemp} ?" , "Cadastro Funcionários", MessageBoxButtons.YesNo);
             if (DialogResult == DialogResult.Yes)
             {
                 con.AbrirConexao();

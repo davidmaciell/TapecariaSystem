@@ -42,5 +42,10 @@ namespace TapecariaSystem
             frm.ShowDialog();
         }
 
+        private void cadastrousuarios_Click(object sender, EventArgs e)
+        {
+            cadastro.usuario frm = new cadastro.usuario();
+            frm.ShowDialog();
+        }
     }
 }

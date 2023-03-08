@@ -89,6 +89,7 @@ namespace TapecariaSystem
             this.cadastromaterial.Name = "cadastromaterial";
             this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
             this.cadastromaterial.Text = "Material";
+            this.cadastromaterial.Click += new System.EventHandler(this.cadastromaterial_Click);
             // 
             // cadastrofornecedor
             // 

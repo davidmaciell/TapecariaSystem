@@ -38,11 +38,17 @@ namespace TapecariaSystem
 
         private void cadastrofornecedor_Click(object sender, EventArgs e)
         {
-            cadastro.fornecedor frm = new cadastro.fornecedor();
+            cadastro.fornecedores frm = new cadastro.fornecedores();
             frm.ShowDialog();
         }
 
         private void cadastrousuarios_Click(object sender, EventArgs e)
+        {
+            cadastro.usuario frm = new cadastro.usuario();
+            frm.ShowDialog();
+        }
+
+        private void cadastromaterial_Click(object sender, EventArgs e)
         {
             cadastro.usuario frm = new cadastro.usuario();
             frm.ShowDialog();

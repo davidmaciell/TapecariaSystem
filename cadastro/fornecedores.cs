@@ -33,18 +33,18 @@ namespace TapecariaSystem.cadastro
             //fazendo o tratamento dos dados 
             if (txtNome.Text.ToString() == "") //tirando os espaços
             {
-                MessageBox.Show("Preencha o Campo nome", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha o Campo nome", "Cadastro Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
                 txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher             
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
             {
-                MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha o campo CPF", "Cadastro Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCpf.Focus();
             }
 
             con.AbrirConexao();
-            sql = "INSERT INTO tb_cliente ( nome_cliente, endereco_cliente, cep_cliente, cpf_cliente, telefone_cliente, celular_cliente, date)VALUES( @nome, @endereco, @cep, @cpf, @telefone, @celular, curDate())";
+            sql = "INSERT INTO tb_fornecedores ( nome_fornecedor, endereco_fornecedor, cep_fornecedor, cpf_fornecedor, telefone_fornecedor, celular_fornecedor, date)VALUES( @nome, @endereco, @cep, @cpf, @telefone, @celular, curDate())";
 
             cmd = new MySqlCommand(sql, con.con);
 
@@ -58,7 +58,7 @@ namespace TapecariaSystem.cadastro
             cmd.ExecuteNonQuery();
             con.FecharConexao();
 
-            MessageBox.Show("Salvo com sucesso!", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Salvo com sucesso!", "Cadastro Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnNovo.Enabled = true;
             btnSalvar.Enabled = false;
             btnEditar.Enabled = false;
@@ -134,7 +134,7 @@ namespace TapecariaSystem.cadastro
         private void Listar()  //esse função vai trazer os dados do banco para minha grid
         {
             con.AbrirConexao();  //chamo o abrir conexão 
-            sql = "SELECT * FROM tb_cliente ORDER BY nome_cliente asc";
+            sql = "SELECT * FROM tb_fornecedores ORDER BY nome_fornecedor asc";
             cmd = new MySqlCommand(sql, con.con);
             MySqlDataAdapter da = new MySqlDataAdapter();
             da.SelectCommand = cmd;
@@ -167,20 +167,20 @@ namespace TapecariaSystem.cadastro
         {
             if (txtNome.Text.ToString().Trim() == "") //valida se o cpf e nome está preenchido
             {
-                MessageBox.Show("Preencha o Campo Nome", "Cadastro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha o Campo Nome", "Cadastro Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Text = "";
                 txtNome.Focus();
                 return;
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
             {
-                MessageBox.Show("Preencha o campo CPF", "Cadastro funcionários", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Preencha o campo CPF", "Cadastro Fornecedores", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCpf.Focus();
                 return;
             }
             // abre a conexão
             con.AbrirConexao();
-            sql = "UPDATE tb_cliente SET nome_cliente = @nome, endereco_cliente = @endereco, cep_cliente = @cep, cpf_cliente = @cpf, telefone_cliente = @telefone , celular_cliente = @celular WHERE id_cliente = @ID";
+            sql = "UPDATE tb_fornecedores SET nome_fornecedor = @nome, endereco_fornecedor = @endereco, cep_fornecedor = @cep, cpf_fornecedor = @cpf, telefone_fornecedor = @telefone , celular_fornecedor = @celular WHERE id_fornecedor = @ID";
             cmd = new MySqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@id", varid);
             cmd.Parameters.AddWithValue("@nome", txtNome.Text.ToUpper().Trim());
@@ -253,6 +253,8 @@ namespace TapecariaSystem.cadastro
                 Listar();
             }
         }
+
+      
     }
 
 }

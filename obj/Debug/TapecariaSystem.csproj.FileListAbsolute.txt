@@ -13,5 +13,6 @@ C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\MySql.Data.dll
 C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\MySql.Data.EntityFramework.dll
 C:\Users\DTI\source\repos\TapecariaSystem\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CopyComplete
-C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.fornecedor.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.usuario.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.fornecedores.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.login.FormLogin.resources

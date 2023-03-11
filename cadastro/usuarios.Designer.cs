@@ -32,7 +32,7 @@ namespace TapecariaSystem.cadastro
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuario));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.grid = new System.Windows.Forms.DataGridView();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@ namespace TapecariaSystem.cadastro
             this.btnExcluir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.txtNomeC = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,28 +50,28 @@ namespace TapecariaSystem.cadastro
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 12);
+            this.label1.Location = new System.Drawing.Point(117, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome";
+            this.label1.Text = "Usuário";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(474, 82);
+            this.label2.Location = new System.Drawing.Point(461, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "CPF";
             // 
-            // txtNome
+            // txtUsuario
             // 
-            this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(108, 9);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(243, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Location = new System.Drawing.Point(177, 98);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(243, 20);
+            this.txtUsuario.TabIndex = 3;
             // 
             // grid
             // 
@@ -115,7 +115,7 @@ namespace TapecariaSystem.cadastro
             this.btnSalvar.Location = new System.Drawing.Point(261, 423);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 7;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -134,36 +134,35 @@ namespace TapecariaSystem.cadastro
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 82);
+            this.label5.Location = new System.Drawing.Point(78, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Celular";
+            this.label5.Text = "Nome Completo";
             // 
             // txtCpf
             // 
             this.txtCpf.Enabled = false;
-            this.txtCpf.Location = new System.Drawing.Point(515, 75);
+            this.txtCpf.Location = new System.Drawing.Point(515, 37);
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(109, 20);
+            this.txtCpf.Size = new System.Drawing.Size(111, 20);
             this.txtCpf.TabIndex = 2;
             // 
-            // txtCelular
+            // txtNomeC
             // 
-            this.txtCelular.Enabled = false;
-            this.txtCelular.Location = new System.Drawing.Point(108, 79);
-            this.txtCelular.Mask = "(99) 00000-0000";
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(118, 20);
-            this.txtCelular.TabIndex = 6;
+            this.txtNomeC.Enabled = false;
+            this.txtNomeC.Location = new System.Drawing.Point(177, 33);
+            this.txtNomeC.Name = "txtNomeC";
+            this.txtNomeC.Size = new System.Drawing.Size(243, 20);
+            this.txtNomeC.TabIndex = 1;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(387, 423);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -171,15 +170,15 @@ namespace TapecariaSystem.cadastro
             // txtSenha
             // 
             this.txtSenha.Enabled = false;
-            this.txtSenha.Location = new System.Drawing.Point(515, 12);
+            this.txtSenha.Location = new System.Drawing.Point(515, 101);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(243, 20);
-            this.txtSenha.TabIndex = 16;
+            this.txtSenha.Size = new System.Drawing.Size(159, 20);
+            this.txtSenha.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(466, 16);
+            this.label3.Location = new System.Drawing.Point(450, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 17;
@@ -193,7 +192,7 @@ namespace TapecariaSystem.cadastro
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtNomeC);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExcluir);
@@ -201,7 +200,7 @@ namespace TapecariaSystem.cadastro
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.grid);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -220,7 +219,7 @@ namespace TapecariaSystem.cadastro
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
@@ -228,7 +227,7 @@ namespace TapecariaSystem.cadastro
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox txtCpf;
-        private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.MaskedTextBox txtNomeC;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label3;

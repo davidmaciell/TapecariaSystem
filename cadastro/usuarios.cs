@@ -31,11 +31,11 @@ namespace TapecariaSystem.cadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //fazendo o tratamento dos dados 
-            if (txtNome.Text.ToString() == "") //tirando os espaços
+            if (txtUsuario.Text.ToString() == "") //tirando os espaços
             {
-                MessageBox.Show("Preencha o Campo nome", "Cadastro Usuário", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Text = "";  // limpa o campo que precisa ser preenchido novamente
-                txtNome.Focus();   //focus para a seta voltar exatamente onde tem que preencher             
+                MessageBox.Show("Preencha o Campo Usuario", "Cadastro Usuário", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Text = "";  // limpa o campo que precisa ser preenchido novamente
+                txtUsuario.Focus();   //focus para a seta voltar exatamente onde tem que preencher             
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
             {
@@ -44,13 +44,13 @@ namespace TapecariaSystem.cadastro
             }
 
             con.AbrirConexao();
-            sql = "INSERT INTO tb_usuarios ( nome_usuario, cpf_usuario, celular_usuario, senha_usuario)VALUES( @nome, @cpf, @celular, MD5(@senha))";
+            sql = "INSERT INTO tb_usuarios ( nome_usuario, cpf_usuario, nomec_usuario, senha_usuario)VALUES( @usuario, @cpf, @nomec, MD5(@senha))";
 
             cmd = new MySqlCommand(sql, con.con);
 
-            cmd.Parameters.AddWithValue("@nome", txtNome.Text.ToUpper().Trim());
+            cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-            cmd.Parameters.AddWithValue("@celular", txtCelular.Text);
+            cmd.Parameters.AddWithValue("@nomec", txtNomeC.Text);
             cmd.Parameters.AddWithValue("@senha",txtSenha.Text);
 
             cmd.ExecuteNonQuery();
@@ -70,7 +70,7 @@ namespace TapecariaSystem.cadastro
         private void btnNovo_Click(object sender, EventArgs e)
         {
             habilitarCampos();
-            txtNome.Focus();
+            txtNomeC.Focus();
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
         }
@@ -78,25 +78,25 @@ namespace TapecariaSystem.cadastro
         private void habilitarCampos()
         {
             btnSalvar.Enabled = true;
-            txtNome.Enabled = true;
+            txtUsuario.Enabled = true;
             txtSenha.Enabled = true;
             txtCpf.Enabled = true;
-            txtCelular.Enabled = true;
+            txtNomeC.Enabled = true;
             btnNovo.Enabled = false;
         }
         private void desabilitarCampos()
         {
-            txtNome.Enabled = false;
+            txtUsuario.Enabled = false;
             txtCpf.Enabled = false;
-            txtCelular.Enabled = false;
+            txtNomeC.Enabled = false;
             txtSenha.Enabled = false;
         }
         private void LimparCampos()
         {
-            txtNome.Text = "";
+            txtUsuario.Text = "";
             txtSenha.Text = "";
             txtCpf.Text = "";
-            txtCelular.Text = "";
+            txtNomeC.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -112,9 +112,9 @@ namespace TapecariaSystem.cadastro
         private void FormatarGD()  //formatação dos meus campos da grid
         {
             grid.Columns[0].HeaderText = "ID";
-            grid.Columns[1].HeaderText = "Nome";   
+            grid.Columns[1].HeaderText = "Nome Completo";
             grid.Columns[2].HeaderText = "CPF";
-            grid.Columns[3].HeaderText = "Celular";
+            grid.Columns[3].HeaderText = "Usuário";   
 
             //grid.Columns[5].Width = 50;
             grid.Columns[0].Visible = false;
@@ -142,19 +142,19 @@ namespace TapecariaSystem.cadastro
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = true;
             varid = grid.CurrentRow.Cells[0].Value.ToString();// essa váriavel que declarei no começo vai receber o id para edição.
-            txtNome.Text = grid.CurrentRow.Cells[1].Value.ToString();
+            txtUsuario.Text = grid.CurrentRow.Cells[1].Value.ToString();
             cpfAntigo = grid.CurrentRow.Cells[2].Value.ToString();
             txtCpf.Text = grid.CurrentRow.Cells[3].Value.ToString();
-            txtCelular.Text = grid.CurrentRow.Cells[4].Value.ToString();
+            txtNomeC.Text = grid.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text.ToString().Trim() == "") //valida se o cpf e nome está preenchido
+            if (txtUsuario.Text.ToString().Trim() == "") //valida se o cpf e nome está preenchido
             {
                 MessageBox.Show("Preencha o Campo Nome", "Cadastro Usuário", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Text = "";
-                txtNome.Focus();
+                txtUsuario.Text = "";
+                txtUsuario.Focus();
                 return;
             }
             if (txtCpf.Text == "   .   .   -  " || txtCpf.Text.Length < 14)
@@ -165,13 +165,13 @@ namespace TapecariaSystem.cadastro
             }
             // abre a conexão
             con.AbrirConexao();
-            sql = "UPDATE tb_usuarios SET nome_usuario = @nome, senha_usuario = MD5(@senha), cpf_usuario = @cpf, celular_usuario = @celular WHERE id_usuario = @ID";
+            sql = "UPDATE tb_usuarios SET nome_usuario = @nome, senha_usuario = MD5(@senha), cpf_usuario = @cpf, nomec_usuario = @nomec WHERE id_usuario = @ID";
             cmd = new MySqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@id", varid);
-            cmd.Parameters.AddWithValue("@nome", txtNome.Text.ToUpper().Trim());
+            cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
             cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-            cmd.Parameters.AddWithValue("@celular", txtCelular.Text);
+            cmd.Parameters.AddWithValue("@nomeC", txtNomeC.Text);
 
             //verifica se o cpf já existe
             if (txtCpf.Text != cpfAntigo)
@@ -209,7 +209,7 @@ namespace TapecariaSystem.cadastro
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             string nomeTemp;
-            nomeTemp = txtNome.Text;
+            nomeTemp = txtUsuario.Text;
 
             DialogResult DialogResult = MessageBox.Show($"Deseja mesmo Excluir {nomeTemp} ?" , "Cadastro Funcionários", MessageBoxButtons.YesNo);
             if (DialogResult == DialogResult.Yes)

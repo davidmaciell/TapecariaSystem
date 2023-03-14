@@ -15,3 +15,4 @@ C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.CopyC
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.usuario.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.fornecedores.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.login.FormLogin.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.materiais.resources

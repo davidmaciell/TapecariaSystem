@@ -50,7 +50,7 @@ namespace TapecariaSystem
 
         private void cadastromaterial_Click(object sender, EventArgs e)
         {
-            cadastro.usuario frm = new cadastro.usuario();
+            cadastro.materiais frm = new cadastro.materiais();
             frm.ShowDialog();
         }
     }

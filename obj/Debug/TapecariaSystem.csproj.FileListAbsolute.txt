@@ -16,3 +16,4 @@ C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.usu
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.fornecedores.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.login.FormLogin.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.materiais.resources
+C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.servicos.resources

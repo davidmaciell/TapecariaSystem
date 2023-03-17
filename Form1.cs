@@ -53,5 +53,11 @@ namespace TapecariaSystem
             cadastro.materiais frm = new cadastro.materiais();
             frm.ShowDialog();
         }
+
+        private void cadastroservico_Click(object sender, EventArgs e)
+        {
+            cadastro.servicos frm = new cadastro.servicos();
+            frm.ShowDialog();
+        }
     }
 }

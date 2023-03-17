@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastro\servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro\servicos.Designer.cs">
+      <DependentUpon>servicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadastro\materiais.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cadastro\servicos.resx">
+      <DependentUpon>servicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadastro\materiais.resx">
       <DependentUpon>materiais.cs</DependentUpon>
     </EmbeddedResource>

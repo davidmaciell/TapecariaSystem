@@ -59,5 +59,10 @@ namespace TapecariaSystem
             cadastro.servicos frm = new cadastro.servicos();
             frm.ShowDialog();
         }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = TapecariaSystem.login.FormLogin.nomeUsu;
+        }
     }
 }

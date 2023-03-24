@@ -42,6 +42,7 @@ namespace TapecariaSystem
             this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPrincipal = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).BeginInit();
@@ -74,35 +75,35 @@ namespace TapecariaSystem
             // cadastrocliente
             // 
             this.cadastrocliente.Name = "cadastrocliente";
-            this.cadastrocliente.Size = new System.Drawing.Size(180, 22);
+            this.cadastrocliente.Size = new System.Drawing.Size(134, 22);
             this.cadastrocliente.Text = "Cliente";
             this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
             // cadastroservico
             // 
             this.cadastroservico.Name = "cadastroservico";
-            this.cadastroservico.Size = new System.Drawing.Size(180, 22);
+            this.cadastroservico.Size = new System.Drawing.Size(134, 22);
             this.cadastroservico.Text = "Serviços";
             this.cadastroservico.Click += new System.EventHandler(this.cadastroservico_Click);
             // 
             // cadastromaterial
             // 
             this.cadastromaterial.Name = "cadastromaterial";
-            this.cadastromaterial.Size = new System.Drawing.Size(180, 22);
+            this.cadastromaterial.Size = new System.Drawing.Size(134, 22);
             this.cadastromaterial.Text = "Material";
             this.cadastromaterial.Click += new System.EventHandler(this.cadastromaterial_Click);
             // 
             // cadastrofornecedor
             // 
             this.cadastrofornecedor.Name = "cadastrofornecedor";
-            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 22);
+            this.cadastrofornecedor.Size = new System.Drawing.Size(134, 22);
             this.cadastrofornecedor.Text = "Fornecedor";
             this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click);
             // 
             // cadastrousuarios
             // 
             this.cadastrousuarios.Name = "cadastrousuarios";
-            this.cadastrousuarios.Size = new System.Drawing.Size(180, 22);
+            this.cadastrousuarios.Size = new System.Drawing.Size(134, 22);
             this.cadastrousuarios.Text = "Usuários";
             this.cadastrousuarios.Click += new System.EventHandler(this.cadastrousuarios_Click);
             // 
@@ -149,11 +150,21 @@ namespace TapecariaSystem
             this.imgPrincipal.TabIndex = 1;
             this.imgPrincipal.TabStop = false;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(12, 418);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Usuário";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imgPrincipal);
             this.Controls.Add(this.MenuPrincipal);
@@ -163,6 +174,7 @@ namespace TapecariaSystem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.MenuPrincipal.ResumeLayout(false);
             this.MenuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -186,6 +198,7 @@ namespace TapecariaSystem
         private System.Windows.Forms.PictureBox imgPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem cadastrousuarios;
+        public System.Windows.Forms.Label lblUsuario;
     }
 }
 

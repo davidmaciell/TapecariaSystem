@@ -115,6 +115,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tapecariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tapecariaDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="cadastro\servicos.resx">
       <DependentUpon>servicos.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +160,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="tapecariaDataSet.xsc">
+      <DependentUpon>tapecariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tapecariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tapecariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tapecariaDataSet.xss">
+      <DependentUpon>tapecariaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

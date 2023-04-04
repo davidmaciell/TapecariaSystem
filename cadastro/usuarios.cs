@@ -165,7 +165,7 @@ namespace TapecariaSystem.cadastro
             }
             // abre a conexão
             con.AbrirConexao();
-            sql = "UPDATE tb_usuarios SET nome_usuario = @nome, senha_usuario = MD5(@senha), cpf_usuario = @cpf, nomec_usuario = @nomec WHERE id_usuario = @ID";
+            sql = "UPDATE tb_usuarios SET nome_usuario = @usuario, senha_usuario = MD5(@senha), cpf_usuario = @cpf, nomec_usuario = @nomeC WHERE id_usuario = @ID";
             cmd = new MySqlCommand(sql, con.con);
             cmd.Parameters.AddWithValue("@id", varid);
             cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
@@ -215,7 +215,7 @@ namespace TapecariaSystem.cadastro
             if (DialogResult == DialogResult.Yes)
             {
                 con.AbrirConexao();
-                sql = "DELETE FROM tb_usuarios WHERE id_usuario = @id";
+                sql = "DELETE FROM tb_usuarios WHERE id_usuario = @ID";
                 cmd = new MySqlCommand(sql, con.con);
                 cmd.Parameters.AddWithValue("@id", varid);
 

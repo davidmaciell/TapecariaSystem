@@ -17,4 +17,3 @@ C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.for
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.login.FormLogin.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.materiais.resources
 C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.cadastro.servicos.resources
-C:\Users\DTI\source\repos\TapecariaSystem\obj\Debug\TapecariaSystem.csproj.AssemblyReference.cache

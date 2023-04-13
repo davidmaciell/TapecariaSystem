@@ -43,6 +43,7 @@ namespace TapecariaSystem
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPrincipal = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.labelnen = new System.Windows.Forms.Label();
             this.MenuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPrincipal)).BeginInit();
@@ -152,18 +153,32 @@ namespace TapecariaSystem
             // 
             // lblUsuario
             // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 418);
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(90, 416);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(64, 20);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuário";
+            // 
+            // labelnen
+            // 
+            this.labelnen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelnen.AutoSize = true;
+            this.labelnen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelnen.Location = new System.Drawing.Point(13, 416);
+            this.labelnen.Name = "labelnen";
+            this.labelnen.Size = new System.Drawing.Size(81, 20);
+            this.labelnen.TabIndex = 4;
+            this.labelnen.Text = "Usuário: ";
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.labelnen);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imgPrincipal);
@@ -199,6 +214,7 @@ namespace TapecariaSystem
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem cadastrousuarios;
         public System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label labelnen;
     }
 }
 

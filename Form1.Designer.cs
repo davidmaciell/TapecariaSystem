@@ -57,7 +57,7 @@ namespace TapecariaSystem
             this.sair});
             this.MenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MenuPrincipal.Name = "MenuPrincipal";
-            this.MenuPrincipal.Size = new System.Drawing.Size(877, 24);
+            this.MenuPrincipal.Size = new System.Drawing.Size(877, 29);
             this.MenuPrincipal.TabIndex = 0;
             this.MenuPrincipal.Text = "MenuPrincipal";
             // 
@@ -69,42 +69,43 @@ namespace TapecariaSystem
             this.cadastromaterial,
             this.cadastrofornecedor,
             this.cadastrousuarios});
+            this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // cadastrocliente
             // 
             this.cadastrocliente.Name = "cadastrocliente";
-            this.cadastrocliente.Size = new System.Drawing.Size(134, 22);
+            this.cadastrocliente.Size = new System.Drawing.Size(180, 26);
             this.cadastrocliente.Text = "Cliente";
             this.cadastrocliente.Click += new System.EventHandler(this.cadastrocliente_Click);
             // 
             // cadastroservico
             // 
             this.cadastroservico.Name = "cadastroservico";
-            this.cadastroservico.Size = new System.Drawing.Size(134, 22);
+            this.cadastroservico.Size = new System.Drawing.Size(180, 26);
             this.cadastroservico.Text = "Serviços";
             this.cadastroservico.Click += new System.EventHandler(this.cadastroservico_Click);
             // 
             // cadastromaterial
             // 
             this.cadastromaterial.Name = "cadastromaterial";
-            this.cadastromaterial.Size = new System.Drawing.Size(134, 22);
+            this.cadastromaterial.Size = new System.Drawing.Size(180, 26);
             this.cadastromaterial.Text = "Material";
             this.cadastromaterial.Click += new System.EventHandler(this.cadastromaterial_Click);
             // 
             // cadastrofornecedor
             // 
             this.cadastrofornecedor.Name = "cadastrofornecedor";
-            this.cadastrofornecedor.Size = new System.Drawing.Size(134, 22);
+            this.cadastrofornecedor.Size = new System.Drawing.Size(180, 26);
             this.cadastrofornecedor.Text = "Fornecedor";
             this.cadastrofornecedor.Click += new System.EventHandler(this.cadastrofornecedor_Click);
             // 
             // cadastrousuarios
             // 
             this.cadastrousuarios.Name = "cadastrousuarios";
-            this.cadastrousuarios.Size = new System.Drawing.Size(134, 22);
+            this.cadastrousuarios.Size = new System.Drawing.Size(180, 26);
             this.cadastrousuarios.Text = "Usuários";
             this.cadastrousuarios.Click += new System.EventHandler(this.cadastrousuarios_Click);
             // 
@@ -112,20 +113,22 @@ namespace TapecariaSystem
             // 
             this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.relatoriossaidas});
+            this.relatóriosToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             // 
             // relatoriossaidas
             // 
             this.relatoriossaidas.Name = "relatoriossaidas";
-            this.relatoriossaidas.Size = new System.Drawing.Size(110, 22);
+            this.relatoriossaidas.Size = new System.Drawing.Size(180, 26);
             this.relatoriossaidas.Text = "Saídas ";
             // 
             // sair
             // 
+            this.sair.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sair.Name = "sair";
-            this.sair.Size = new System.Drawing.Size(38, 20);
+            this.sair.Size = new System.Drawing.Size(49, 25);
             this.sair.Text = "Sair";
             this.sair.Click += new System.EventHandler(this.sair_Click);
             // 
@@ -133,10 +136,10 @@ namespace TapecariaSystem
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::TapecariaSystem.Properties.Resources.sofaM;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 29);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(877, 426);
+            this.pictureBox1.Size = new System.Drawing.Size(877, 421);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;

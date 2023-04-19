@@ -29,6 +29,8 @@ namespace TapecariaSystem.cadastro
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuario));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,50 +51,70 @@ namespace TapecariaSystem.cadastro
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(117, 101);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(451, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuário";
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(461, 40);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(813, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
+            this.label2.Size = new System.Drawing.Size(40, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "CPF";
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(177, 98);
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(521, 150);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(243, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(243, 26);
             this.txtUsuario.TabIndex = 3;
             // 
             // grid
             // 
             this.grid.AllowUserToAddRows = false;
             this.grid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            this.grid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid.Location = new System.Drawing.Point(39, 197);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.grid.Location = new System.Drawing.Point(239, 250);
             this.grid.Margin = new System.Windows.Forms.Padding(6, 6, 3, 3);
             this.grid.Name = "grid";
             this.grid.ReadOnly = true;
             this.grid.RowHeadersWidth = 45;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid.Size = new System.Drawing.Size(787, 203);
+            this.grid.Size = new System.Drawing.Size(969, 325);
             this.grid.TabIndex = 10;
             this.grid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellDoubleClick);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(133, 423);
+            this.btnNovo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Location = new System.Drawing.Point(457, 641);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.Size = new System.Drawing.Size(80, 30);
             this.btnNovo.TabIndex = 11;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
@@ -100,10 +122,12 @@ namespace TapecariaSystem.cadastro
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(515, 423);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(839, 641);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(80, 30);
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -111,10 +135,12 @@ namespace TapecariaSystem.cadastro
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSalvar.Enabled = false;
-            this.btnSalvar.Location = new System.Drawing.Point(261, 423);
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(585, 641);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.Size = new System.Drawing.Size(80, 30);
             this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -122,10 +148,12 @@ namespace TapecariaSystem.cadastro
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnExcluir.Enabled = false;
-            this.btnExcluir.Location = new System.Drawing.Point(641, 423);
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(965, 641);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -133,35 +161,43 @@ namespace TapecariaSystem.cadastro
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(78, 40);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(392, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Nome Completo";
             // 
             // txtCpf
             // 
+            this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtCpf.Enabled = false;
-            this.txtCpf.Location = new System.Drawing.Point(515, 37);
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(859, 89);
             this.txtCpf.Mask = "000.000.000-00";
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(111, 20);
+            this.txtCpf.Size = new System.Drawing.Size(111, 26);
             this.txtCpf.TabIndex = 2;
             // 
             // txtNomeC
             // 
+            this.txtNomeC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNomeC.Enabled = false;
-            this.txtNomeC.Location = new System.Drawing.Point(177, 33);
+            this.txtNomeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeC.Location = new System.Drawing.Point(521, 85);
             this.txtNomeC.Name = "txtNomeC";
-            this.txtNomeC.Size = new System.Drawing.Size(243, 20);
+            this.txtNomeC.Size = new System.Drawing.Size(243, 26);
             this.txtNomeC.TabIndex = 1;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(387, 423);
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(711, 641);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -169,18 +205,22 @@ namespace TapecariaSystem.cadastro
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSenha.Enabled = false;
-            this.txtSenha.Location = new System.Drawing.Point(515, 101);
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(859, 153);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(159, 20);
+            this.txtSenha.Size = new System.Drawing.Size(159, 26);
             this.txtSenha.TabIndex = 4;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(450, 101);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(797, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Senha";
             // 
@@ -188,7 +228,7 @@ namespace TapecariaSystem.cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 476);
+            this.ClientSize = new System.Drawing.Size(1449, 776);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.btnCancelar);
